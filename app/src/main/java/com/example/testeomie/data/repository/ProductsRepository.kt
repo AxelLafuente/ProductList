@@ -10,5 +10,6 @@ class ProductsRepository(
     fun getAllProductsItems() = db.getProductsDao().getAllOrders()
     fun getTotalListValue() = db.getProductsDao().getTotalListValue()
     fun getTotalOrders() = db.getProductsDao().getTotalOrders()
+    fun dropAllItems() = db.getProductsDao().dropAllItems()
 }
 

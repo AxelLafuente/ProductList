@@ -1,15 +1,12 @@
 package com.example.testeomie.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.testeomie.data.db.ProductsDatabase
 import com.example.testeomie.data.db.entities.ProductItem
 import com.example.testeomie.data.other.ProductsItemAdapter
-import com.example.testeomie.data.repository.ProductsRepository
 import com.example.testeomie.databinding.ActivityProductsListBinding
 import com.example.testeomie.ui.viewmodel.ProductsViewModel
 import com.example.testeomie.ui.viewmodel.ProductsViewModelFactory
@@ -34,7 +31,7 @@ class ProductsListActivity : AppCompatActivity(), KodeinAware {
         binding.rvProductsList.adapter = adapter
 
         viewmodel.getTotalValueItems().observe(this, Observer {
-            binding.txtTotalListValue.text = "R$$it"
+            binding.txtTotalListValue.text = "R$" + it.let { 0 }
         })
         viewmodel.getAllProductsItems().observe(this, Observer {
             adapter.items = it
@@ -64,6 +61,9 @@ class ProductsListActivity : AppCompatActivity(), KodeinAware {
                         }
                     }
                 }).show()
+        }
+        binding.btnDropItems.setOnClickListener {
+            viewmodel.dropAllItens()
         }
     }
 }

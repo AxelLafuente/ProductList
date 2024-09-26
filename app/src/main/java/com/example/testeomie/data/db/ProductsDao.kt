@@ -21,4 +21,8 @@ interface ProductsDao {
     @Query("SELECT COUNT(*) FROM PRODUTOSCOMPRADOS")
     fun getTotalOrders(): LiveData<Int>
 
+
+    @Query("DELETE FROM PRODUTOSCOMPRADOS")
+    fun dropAllItems()
+
 }

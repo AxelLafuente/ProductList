@@ -22,7 +22,6 @@
         android:id="@+id/txt_customer_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cliente"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -33,7 +32,6 @@
         android:id="@+id/txt_total_list_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ValorTotal"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -67,10 +65,22 @@
     <Button
         android:id="@+id/btnAddItens"
         android:layout_width="wrap_content"
-        android:text="Adicionar compras a Lista"
         android:layout_height="65dp"
+        android:text="@string/novo_item"
+        android:backgroundTint="@android:color/holo_green_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintHorizontal_bias="0.256"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDropItems"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="@string/limpar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnAddItens" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
