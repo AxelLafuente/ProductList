@@ -1,4 +1,4 @@
-Horas Gastas: 40
+Horas Gastas: 20
 
 Apredizado : Room, Dialog, SQLLite, 
 
